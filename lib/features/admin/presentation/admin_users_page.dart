@@ -538,7 +538,7 @@ class _AddUserDialogState extends State<_AddUserDialog> {
             items: const [
               DropdownMenuItem(value: 'wali', child: Text('Wali')),
               DropdownMenuItem(value: 'ustadz', child: Text('Ustadz')),
-              DropdownMenuItem(value: 'admin', child: Text('Admin')),
+              // Admin role dihapus - hanya ada 1 super admin
             ],
             onChanged: (v) => setState(() => _role = v ?? 'wali'),
             decoration: const InputDecoration(labelText: 'Role'),
@@ -645,7 +645,7 @@ class _EditUserDialogState extends State<_EditUserDialog> {
             items: const [
               DropdownMenuItem(value: 'wali', child: Text('Wali')),
               DropdownMenuItem(value: 'ustadz', child: Text('Ustadz')),
-              DropdownMenuItem(value: 'admin', child: Text('Admin')),
+              // Admin role dihapus - hanya ada 1 super admin
             ],
             onChanged: (v) => setState(() => _role = v ?? 'wali'),
             decoration: const InputDecoration(labelText: 'Role'),
@@ -662,13 +662,7 @@ class _EditUserDialogState extends State<_EditUserDialog> {
             'role': _role,
           };
           
-          // If changing to admin role, auto-approve
-          if (_role == 'admin' && widget.initial['role'] != 'admin') {
-            updateData['isApproved'] = true;
-            updateData['status'] = 'approved';
-            updateData['approvedBy'] = FirebaseAuth.instance.currentUser?.uid ?? 'system';
-            updateData['approvedAt'] = FieldValue.serverTimestamp();
-          }
+          // Note: Admin role tidak dapat diubah via UI - hanya ada 1 super admin
           
           await users.doc(widget.id).set(updateData, SetOptions(merge: true));
           
