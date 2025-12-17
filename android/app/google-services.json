@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "358374043524",
+    "project_id": "e-pesantren-6aab5",
+    "storage_bucket": "e-pesantren-6aab5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358374043524:android:3d9369fad3ed042646b7d1",
+        "android_client_info": {
+          "package_name": "com.example.e_pesantren"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMJCFXzCIA4g9MmVgkTGb2GJ_kHjMbStQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
